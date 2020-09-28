@@ -8,18 +8,19 @@ let game = () => {
 		).toLowerCase();
 
 		let computerPlay = () => {
-			let arr = [
-				'Rock',
-				'Paper',
-				'Scissors'
-			];
-			return arr[Math.floor(Math.random() * arr.length)];
+			let shoot = Math.random();
+			if (shoot >= 0 && shoot <= 0.334) {
+				return 'rock';
+			}
+			if (shoot > 0.334 && shoot <= 0.667) {
+				return 'paper';
+			}
+			if (shoot > 0.667 && shoot <= 0.999) {
+				return 'scissors';
+			}
 		};
 
 		computerSelection = computerPlay().toLowerCase();
-
-		console.log(userSelection);
-		console.log(computerSelection);
 
 		if (userSelection === 'rock' && computerSelection === 'scissors') {
 			console.log('You Win!  Rock smashes Scissors!');
