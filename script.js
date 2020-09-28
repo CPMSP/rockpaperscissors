@@ -2,7 +2,7 @@ let playerScore = 0;
 let compScore = 0;
 
 let game = () => {
-	function oneRound(userSelection, computerSelection) {
+	let oneRound = (userSelection, computerSelection) => {
 		userSelection = prompt(
 			'Choose Your Weapon -- Rock, Paper, or Scissors?'
 		).toLowerCase();
@@ -20,7 +20,7 @@ let game = () => {
 			}
 		};
 
-		computerSelection = computerPlay().toLowerCase();
+		computerSelection = computerPlay();
 
 		if (userSelection === 'rock' && computerSelection === 'scissors') {
 			console.log('You Win!  Rock smashes Scissors!');
@@ -48,17 +48,21 @@ let game = () => {
 		} else if (userSelection === computerSelection) {
 			console.log('Tie Round!  Shoot Again!');
 		}
-
 		console.log(`Player: ${playerScore}; Computer: ${compScore}`);
+	};
 
-		if ((playerScore && compScore) < 5) {
-			oneRound();
-		} else {
-			let victor = playerScore > compScore ? 'Player' : 'Computer';
-			console.log(`Winner is: ${victor} !`);
-		}
+	for (i = 0; i < 5; i++) {
+		oneRound();
 	}
-	oneRound();
+	let victor;
+	if (playerScore > compScore) {
+		victor = 'Player';
+	} else if (compScore > playerScore) {
+		victor = 'Computer';
+	} else {
+		victor = 'Tie Game';
+	}
+	console.log(`Winner is: ${victor} !`);
 };
 
 game();
