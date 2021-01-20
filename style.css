@@ -1,0 +1,35 @@
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	height: 100vh;
+	width: 70vw;
+}
+
+.app {
+	display: flex;
+	flex-direction: column;
+	height: 90%;
+	width: 70%;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid black;
+	border-radius: 15px;
+	/* font-size: .5rem; */
+}
+
+.textContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+hr {
+	width: 90%;
+}
+
+button {
+	width: 5rem;
+	margin-top: 5px;
+}
