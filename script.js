@@ -37,7 +37,7 @@ userButtons.forEach((button) => {
 });
 
 const oneRound = (userSelection, computerSelection) => {
-	actions.textContent = `Player: ${userSelection}; Computer: ${computerSelection}`;
+	actions.textContent = `Player: ${userSelection.toUpperCase()}; Computer: ${computerSelection.toUpperCase()}`;
 	textContainer.appendChild(actions);
 	if (userSelection === 'rock' && computerSelection === 'scissors') {
 		text.textContent = 'You Win!  Rock smashes Scissors!';
